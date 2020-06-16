@@ -14,5 +14,20 @@ function FirstName()
 	fi
 }
 
+function LastName()
+{
+	LnamePattern="^[A-Z]([a-z]{2,})$"
+
+	if [[ $1 =~ $LnamePattern ]]
+	then
+		echo "Valid Last Name"
+	else
+		echo "Invalid Last Name"
+	fi
+}
+
 read -p " First Name : " fname
 FirstName $fname
+
+read -p "Last Name : " Lname
+LastName $Lname
