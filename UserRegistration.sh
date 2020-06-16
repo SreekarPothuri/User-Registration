@@ -26,8 +26,29 @@ function LastName()
 	fi
 }
 
+function email()
+{
+	emailPattern="^[A-Za-z0-9]+([._%+-][0-9a-zA-Z]+)*@[A-Za-z0-9]+.[A-Za-z]{2,4}([.][a-zA-Z]{3})*$"
+
+	if [[ $1 =~ $emailPattern ]]
+	then
+		echo "Valid email address"
+	else
+   	echo "Invalid email address"
+	fi
+}
+
 read -p " First Name : " fname
 FirstName $fname
 
+echo -e "\n"
+
 read -p "Last Name : " Lname
 LastName $Lname
+
+echo -e "\n"
+
+read -p "Email Id : " EmailId
+email $EmailId
+
+
