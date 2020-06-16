@@ -64,7 +64,7 @@ function Password()
 			then
 				if [[ $1 =~ $PwdPattern4 ]]
 				then
-					echo "Rule 1,2,3,4 matched"
+					echo "Rule 1,2,3,4 matched and a valid paasword"
 				else
 					echo "Rule 4 not matched"
 				fi
@@ -96,6 +96,14 @@ echo -e "\n"
 
 read -p "Mobile Number : " MobileNo
 MobileNum $MobileNo
+
+echo -e "\n"
+
+echo "Rules to be maintained for attaining a valid password"
+echo "RULE-1 : Should contain minimum of 8 characters"
+echo "RULE-2 : Should have atleast 1 Uppercase letter"
+echo "RULE-3 : Should have atleast 1 numeric number in password"
+echo "RULE-4 : Should contain exactly 1 special character"
 
 echo -e "\n"
 
