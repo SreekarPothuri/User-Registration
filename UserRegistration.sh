@@ -50,6 +50,18 @@ function MobileNum()
    	fi
 }
 
+function Password()
+{
+	PwdPattern1="^([0-9a-zA-Z@#!]){8,}$"
+
+	if [[ $1 =~ $PwdPattern1 ]]
+	then
+		echo "Rule1 matched"
+	else
+		echo "Rule1 not matched"
+	fi
+}
+
 read -p " First Name : " fname
 FirstName $fname
 
@@ -68,3 +80,7 @@ echo -e "\n"
 read -p "Mobile Number : " MobileNo
 MobileNum $MobileNo
 
+echo -e "\n"
+
+read -p "Password : " Pwd
+Password $Pwd
