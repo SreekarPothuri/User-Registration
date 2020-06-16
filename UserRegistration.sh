@@ -55,21 +55,27 @@ function Password()
 	PwdPattern1="^([0-9a-zA-Z@#!]){8,}$"
 	PwdPattern2="^([a-z0-9@#!]*)[A-Z]+([a-z0-9@#!]*)$"
 	PwdPattern3="^([a-zA-Z@#!]*)[0-9]+([a-zA-Z@#!]*)$"
+	PwdPattern4="^([a-zA-Z0-9]*)[@#!]{1}([a-zA-Z0-9]*)$"
 	if [[ $1 =~ $PwdPattern1 ]]
 	then
 		if [[ $1 =~ $PwdPattern2 ]]
 		then
-			if [[ $1 =~ $Pwdpattern3 ]]
+			if [[ $1 =~ $PwdPattern3 ]]
 			then
-				echo "Rule 1,2,3 matched"
+				if [[ $1 =~ $PwdPattern4 ]]
+				then
+					echo "Rule 1,2,3,4 matched"
+				else
+					echo "Rule 4 not matched"
+				fi
 			else
 				echo "Rule 3 not matched"
 			fi
 		else
-			echo "Rule2 not matched"
+			echo "Rule 2 not matched"
 		fi
 	else
-		echo "Rule1 Not matched"
+		echo "Rule 1 Not matched"
 	fi
 }
 
