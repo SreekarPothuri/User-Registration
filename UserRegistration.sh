@@ -53,12 +53,17 @@ function MobileNum()
 function Password()
 {
 	PwdPattern1="^([0-9a-zA-Z@#!]){8,}$"
-
+	PwdPattern2="^([a-z0-9@#!]*)[A-Z]+([a-z0-9@#!]*)$"
 	if [[ $1 =~ $PwdPattern1 ]]
 	then
-		echo "Rule1 matched"
+		if [[ $1 =~ $PwdPattern2 ]]
+		then
+			echo "Rule1&2 matched"
+		else
+			echo "Rule2 not matched"
+		fi
 	else
-		echo "Rule1 not matched"
+		echo "Rule1 Not matched"
 	fi
 }
 
