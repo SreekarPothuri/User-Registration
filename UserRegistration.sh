@@ -28,7 +28,7 @@ function LastName()
 
 function email()
 {
-	emailPattern="^[A-Za-z0-9]+([._%+-][0-9a-zA-Z]+)*@[A-Za-z0-9]+.[A-Za-z]{2,4}([.][a-zA-Z]{3})*$"
+	emailPattern="^[A-Za-z0-9]+([._%+-][0-9a-zA-Z]+)*@[A-Za-z0-9]+.[A-Za-z]{2,4}([.][a-zA-Z]{1,3})*$"
 
 	if [[ $1 =~ $emailPattern ]]
 	then
@@ -38,7 +38,7 @@ function email()
 	fi
 }
 
-read -p " First Name : " fname
+read -p "First Name : " fname
 FirstName $fname
 
 echo -e "\n"
@@ -50,5 +50,3 @@ echo -e "\n"
 
 read -p "Email Id : " EmailId
 email $EmailId
-
-
